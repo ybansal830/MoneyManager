@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ItemDetails">
+
+    <View
+        android:id="@+id/vTop"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/teal_700"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Details"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"/>
+
+    <ImageButton
+        android:id="@+id/ibDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/delete"
+        android:background="@color/teal_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"/>
+
+    <ImageButton
+        android:id="@+id/ibEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit"
+        android:background="@color/teal_700"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ibDelete"
+        android:layout_margin="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="100dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rs.10000"
+                android:textColor="@color/teal_700"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:id="@+id/ivCategoryImage"
+                android:layout_width="50dp"
+                android:layout_height="29dp"
+                android:src="@drawable/salary"
+                android:layout_below="@+id/tvAmount"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Salary"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_below="@+id/tvAmount"
+                android:layout_toRightOf="@+id/ivCategoryImage"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/tvTypehead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type"
+                android:textSize="20sp"
+                android:layout_below="@+id/ivCategoryImage"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_below="@+id/tvCategory"
+                android:layout_toRightOf="@+id/tvTypehead"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/tvDatehead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textSize="20sp"
+                android:layout_below="@+id/tvTypehead"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20 Jul 2021"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_below="@+id/tvType"
+                android:layout_toRightOf="@+id/tvDatehead"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/tvCommentHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comment"
+                android:textSize="20sp"
+                android:layout_below="@+id/tvDatehead"
+                android:layout_margin="20dp"/>
+
+            <TextView
+                android:id="@+id/tvComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="1st"
+                android:textSize="20sp"
+                android:layout_below="@+id/tvDate"
+                android:layout_toRightOf="@+id/tvCommentHead"
+                android:layout_margin="20dp"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

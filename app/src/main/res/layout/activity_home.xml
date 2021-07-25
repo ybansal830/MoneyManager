@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/layout_menu"
+        android:id="@+id/lMenu"
+        android:visibility="gone" />
+
+    <include layout="@layout/layout_navbar"
+        android:id="@+id/vNavBar"/>
+
+    <TextView
+        android:id="@+id/tvTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:background="@color/teal_700"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/vNavBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include layout="@layout/layout_totalamounts"
+        android:id="@+id/vTotal"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vTotal"
+        android:layout_marginTop="10dp"/>
+
+    <ImageButton
+        android:id="@+id/ibAddExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/btnaddexpensebg"
+        android:padding="15dp"
+        android:src="@drawable/addbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibAddIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/btnaddincomebg"
+        android:padding="15dp"
+        android:src="@drawable/addbutton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

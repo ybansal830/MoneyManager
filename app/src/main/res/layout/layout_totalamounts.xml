@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:layout_marginTop="10dp"
+    app:layout_constraintTop_toBottomOf="@+id/tvTop"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/vTotal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/teal_700" />
+
+    <TextView
+        android:id="@+id/tvIncome"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotalIncome"
+        app:layout_constraintEnd_toStartOf="@+id/tvBalance"
+        app:layout_constraintStart_toStartOf="@+id/vTotal"
+        app:layout_constraintTop_toTopOf="@+id/vTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Income"
+        android:textColor="@color/green"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTotalIncome"
+        app:layout_constraintBottom_toBottomOf="@+id/vTotal"
+        app:layout_constraintEnd_toStartOf="@+id/tvTotalBalance"
+        app:layout_constraintStart_toStartOf="@+id/vTotal"
+        app:layout_constraintTop_toBottomOf="@+id/tvIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs.0"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvBalance"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotalBalance"
+        app:layout_constraintEnd_toStartOf="@+id/tvExpense"
+        app:layout_constraintStart_toEndOf="@+id/tvIncome"
+        app:layout_constraintTop_toTopOf="@+id/vTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Balance"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTotalBalance"
+        app:layout_constraintBottom_toBottomOf="@+id/vTotal"
+        app:layout_constraintEnd_toStartOf="@+id/tvTotalExpense"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalIncome"
+        app:layout_constraintTop_toBottomOf="@+id/tvBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs.0"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvExpense"
+        app:layout_constraintBottom_toTopOf="@+id/tvTotalExpense"
+        app:layout_constraintEnd_toEndOf="@+id/vTotal"
+        app:layout_constraintStart_toEndOf="@+id/tvBalance"
+        app:layout_constraintTop_toTopOf="@+id/vTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expenses"
+        android:textColor="@color/red"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTotalExpense"
+        app:layout_constraintBottom_toBottomOf="@+id/vTotal"
+        app:layout_constraintEnd_toEndOf="@+id/vTotal"
+        app:layout_constraintStart_toEndOf="@+id/tvTotalBalance"
+        app:layout_constraintTop_toBottomOf="@+id/tvExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs.0"
+        android:textColor="@color/red"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.myfirst.moneymanager">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MoneyManager">
+        <activity android:name=".Profile"></activity>
+        <activity android:name=".SignUp" />
+        <activity android:name=".Login" />
+        <activity android:name=".ItemDetails" />
+        <activity android:name=".Income" />
+        <activity android:name=".Expenses" />
+        <activity android:name=".Home" />
+        <activity android:name=".Category" />
+        <activity android:name=".Custom" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

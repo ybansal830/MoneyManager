@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Expense"
+        android:background="@color/teal_700"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:paddingVertical="10dp"
+        android:paddingStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/food"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/food"
+        android:background="@drawable/categorybackground"
+        app:layout_constraintTop_toBottomOf="@+id/tvTop"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/bills"/>
+
+    <TextView
+        android:id="@+id/tvFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Food"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food"
+        app:layout_constraintEnd_toStartOf="@+id/tvBills"/>
+
+    <ImageButton
+        android:id="@+id/bills"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/bills"
+        android:background="@drawable/categorybackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/food"
+        app:layout_constraintTop_toBottomOf="@+id/tvTop"
+        app:layout_constraintEnd_toStartOf="@+id/house"/>
+
+    <TextView
+        android:id="@+id/tvBills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bills"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/tvFood"
+        app:layout_constraintTop_toBottomOf="@+id/bills"
+        app:layout_constraintEnd_toStartOf="@+id/tvHouse"/>
+
+    <ImageButton
+        android:id="@+id/house"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/house"
+        android:background="@drawable/categorybackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/bills"
+        app:layout_constraintTop_toBottomOf="@+id/tvTop"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvHouse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="House"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toEndOf="@id/tvBills"
+        app:layout_constraintTop_toBottomOf="@+id/house"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/entertainment"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/entertainment"
+        android:background="@drawable/categorybackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food"
+        app:layout_constraintEnd_toStartOf="@+id/shopping"/>
+
+    <TextView
+        android:id="@+id/tvEntertainment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entertainment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entertainment"
+        app:layout_constraintEnd_toStartOf="@+id/tvShopping"/>
+
+    <ImageButton
+        android:id="@+id/shopping"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/shopping"
+        android:background="@drawable/categorybackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/entertainment"
+        app:layout_constraintTop_toBottomOf="@+id/bills"
+        app:layout_constraintEnd_toStartOf="@+id/clothing"/>
+
+    <TextView
+        android:id="@+id/tvShopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shopping"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toEndOf="@id/tvEntertainment"
+        app:layout_constraintTop_toBottomOf="@+id/shopping"
+        app:layout_constraintEnd_toStartOf="@+id/tvClothing"/>
+
+    <ImageButton
+        android:id="@+id/clothing"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/clothing"
+        android:background="@drawable/categorybackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/shopping"
+        app:layout_constraintTop_toBottomOf="@+id/house"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvClothing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clothing"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintStart_toEndOf="@id/tvShopping"
+        app:layout_constraintTop_toBottomOf="@+id/clothing"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/travel"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/travel"
+        android:background="@drawable/categorybackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/entertainment"
+        app:layout_constraintEnd_toStartOf="@+id/education"/>
+
+    <TextView
+        android:id="@+id/tvTravel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Travel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/travel"
+        app:layout_constraintEnd_toStartOf="@+id/tvEducation"/>
+
+    <ImageButton
+        android:id="@+id/education"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/education"
+        android:background="@drawable/categorybackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/travel"
+        app:layout_constraintTop_toBottomOf="@+id/shopping"
+        app:layout_constraintEnd_toStartOf="@+id/others"/>
+
+    <TextView
+        android:id="@+id/tvEducation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Education"
+        app:layout_constraintStart_toEndOf="@id/tvTravel"
+        app:layout_constraintTop_toBottomOf="@+id/education"
+        app:layout_constraintEnd_toStartOf="@+id/tvOthers"/>
+
+    <ImageButton
+        android:id="@+id/others"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/others"
+        android:background="@drawable/categorybackground"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/education"
+        app:layout_constraintTop_toBottomOf="@+id/clothing"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvOthers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Others"
+        app:layout_constraintStart_toEndOf="@id/tvEducation"
+        app:layout_constraintTop_toBottomOf="@+id/others"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/ibShowSelect"
+        android:layout_width="60sp"
+        android:layout_height="60sp"
+        android:src="@drawable/others"
+        android:background="@drawable/categorybackground"
+        app:layout_constraintTop_toBottomOf="@+id/tvEducation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/tvShowSelect"
+        android:text="Others"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibShowSelect"/>
+
+    <EditText
+        android:id="@+id/etEnterAmount"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Amount"
+        app:layout_constraintTop_toBottomOf="@+id/tvTravel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ibShowSelect"
+        android:inputType="numberDecimal"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/etEnterDate"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Date"
+        app:layout_constraintTop_toBottomOf="@+id/tvOthers"
+        app:layout_constraintStart_toEndOf="@+id/ibShowSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:cursorVisible="false"/>
+
+    <EditText
+        android:id="@+id/etEnterComment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="Enter Comment"
+        app:layout_constraintTop_toBottomOf="@+id/ibShowSelect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:textColor="@color/white"
+        android:background="@drawable/btndatebackground"
+        app:layout_constraintTop_toBottomOf="@+id/etEnterComment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

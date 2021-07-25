@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemView">
+
+    <View
+        android:id="@+id/vTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/light_gray"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <ImageButton
+        android:id="@+id/ivItem"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
+        android:src="@drawable/salary"
+        android:background="@drawable/categorybackground"
+        app:layout_constraintTop_toBottomOf="@+id/vTopBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:id="@+id/tvItemCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salary"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/vTopBar"
+        app:layout_constraintStart_toEndOf="@+id/ivItem"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:id="@+id/tvItemComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1st"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemCategory"
+        app:layout_constraintStart_toEndOf="@+id/ivItem"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:id="@+id/tvItemAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rs.10000"
+        android:textColor="@color/green"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/vTopBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/tvItemDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20/Jul"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemAmount"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

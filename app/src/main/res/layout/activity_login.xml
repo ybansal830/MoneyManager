@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_700">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/usericon"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/slabo_13px"
+
+            android:text="Login"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="60sp" />
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="User name"
+            android:fontFamily="@font/slabo_13px"
+            android:textColor="@color/white"
+            />
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_marginVertical="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User Name"
+            android:paddingVertical="15dp"
+            android:background="@color/white"
+
+            android:layout_marginHorizontal="30dp"
+            />
+        <TextView
+
+            android:layout_marginVertical="15dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="30dp"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:fontFamily="@font/slabo_13px"
+            android:textColor="@color/white"
+            />
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:background="@color/white"
+            android:inputType="textPassword"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="30dp"
+            />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:background="@color/teal_700"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:fontFamily="@font/slabo_13px"
+            android:textSize="25sp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            />
+        <CheckBox
+            android:id="@+id/cbRememberMe"
+            android:layout_width="wrap_content"
+            android:text="Remember me"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/slabo_13px"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/constraint1"
+            >
+
+
+            <TextView
+                android:id="@+id/notyet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="No Account yet? "
+                android:layout_marginLeft="30dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/slabo_13px"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/notyet"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/btnCreateNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="110dp"
+                android:backgroundTint="#008C4AD4"
+                android:text="Create Now"
+                android:fontFamily="@font/slabo_13px"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/notyet" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</ScrollView>
