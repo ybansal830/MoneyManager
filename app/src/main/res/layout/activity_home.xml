@@ -36,7 +36,8 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vTotal"
-        android:layout_marginTop="10dp"/>
+        android:paddingBottom="150dp"
+        android:layout_marginTop="10dp" />
 
     <ImageButton
         android:id="@+id/ibAddExpense"
