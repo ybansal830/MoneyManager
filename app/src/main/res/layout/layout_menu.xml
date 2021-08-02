@@ -49,13 +49,14 @@
 
         <TextView
             android:id="@+id/tvProfile"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:text="Profile"
             android:textSize="20sp"
+            android:paddingStart="40dp"
             app:layout_constraintStart_toEndOf="@+id/ivProfile"
             app:layout_constraintTop_toBottomOf="@+id/vTopHead" />
 
@@ -71,13 +72,14 @@
 
         <TextView
             android:id="@+id/tvHome"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:text="Home"
             android:textSize="20sp"
+            android:paddingStart="40dp"
             app:layout_constraintStart_toEndOf="@+id/ivHome"
             app:layout_constraintTop_toBottomOf="@+id/ivProfile" />
 
@@ -93,13 +95,14 @@
 
         <TextView
             android:id="@+id/tvCustom"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:text="Custom"
             android:textSize="20sp"
+            android:paddingStart="40dp"
             app:layout_constraintStart_toEndOf="@+id/ivCustom"
             app:layout_constraintTop_toBottomOf="@+id/ivHome" />
 
@@ -115,13 +118,14 @@
 
         <TextView
             android:id="@+id/tvCategory"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:text="Category"
             android:textSize="20sp"
+            android:paddingStart="40dp"
             app:layout_constraintStart_toEndOf="@+id/ivCategory"
             app:layout_constraintTop_toBottomOf="@+id/ivCustom" />
 
