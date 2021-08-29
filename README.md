@@ -1,56 +1,40 @@
-
 # Money Manager
+#### This app manage your financial account . You can add your particular incomes and expenses and you can see your saving account on the daily basis. You can track easily with the help of this app.
 
-This app manage your financial account . You can add your particular incomes and expenses
- and you can see your saving account on the daily basis. You can track easily with the help of this app.
+<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/log%20in%20image.jpg height="55px" />
 
-<img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/log%20in%20image.jpg" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="30" height="30" />
 
 ## Screenshots
 
+|**Login Screen**|**Signup Screen**|
+|:---|:--|:--|
+|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/log%20in.jpg height="500px" width="350px"/>|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/register.jpg height="500px" width="350px"/>
 
 
-<p float="left">
+|**Home Screen**|**Category Screen**|**Custom Screen**|
+|:---|:--|:--|
+|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/home%20page.jpg height="500px" width="350px"/>|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/select.jpg height="500px" width="350px"/>|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/dateby.jpg height="500px" width="350px"/>
 
-  <img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/log%20in.jpg" width="150" />
- 
-  <img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/register.jpg" width="150" />
-    <img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/profile.jpg" width="150" />
-  <img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/home%20page.jpg" width="150" /> 
- 
- 
- 
-</p>
 
-<p float="left">
- <img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/add%20expanse.jpg" width="150" />
-   <img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/add%20income.jpg" width="150" />
+|**Add Income Screen**|**Add Expense Screen**|**Profile Screen**|
+|:---|:--|:--|
+|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/add%20income.jpg height="500px" width="350px"/>|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/add%20expanse.jpg height="500px" width="350px"/>|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/profile.jpg height="500px" width="350px"/>
 
-   <img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/select.jpg" width="150" />
-   <img src="https://github.com/ybansal830/MoneyManager/blob/master/MoneyManager/dateby.jpg" width="150" />
-</p>
 
-## Technology
-* Andriod Studio
+## Technologies
+* Android Studio
 * Java
-* RecyclerView
+* Recycler View 
 * Firebase
+* Shared Preferences
 
-
-
-
-  
 ## Features
-
 * You can add your particular daily income.
 * You can add your particular daily expenses.
 * You can also see your daily , monthly and yearly saving money.
 
-  
-## Team Members:
 
+## Team Members : 
 * Yash Bansal
+* Saket Saurabh Singh
 * Dipu Kumar
-* Saket Saurabh Singh 
-
-  
