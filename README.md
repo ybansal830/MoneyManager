@@ -7,7 +7,7 @@
 ## Screenshots
 
 |**Login Screen**|**Signup Screen**|
-|:---|:--|:--|
+|:---|:--|
 |<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/log%20in.jpg height="500px" width="350px"/>|<img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/register.jpg height="500px" width="350px"/>
 
 
