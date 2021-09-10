@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Category extends AppCompatActivity implements View.OnClickListener, OnItemClickListener {
+public class CategoryActivity extends AppCompatActivity implements View.OnClickListener, OnItemClickListener {
 
     private CardView mLMenu, mCvCategory;
     private ImageButton mIbMenu, mIbCategoryInput, mIbBack, mIbAddExpense, mIbAddIncome;
@@ -78,10 +78,10 @@ public class Category extends AppCompatActivity implements View.OnClickListener,
                 mLMenu.setVisibility(View.GONE);
                 break;
             case R.id.ibAddExpense:
-                startActivity(new Intent(Category.this, Expenses.class));
+                startActivity(new Intent(CategoryActivity.this, ExpensesActivity.class));
                 break;
             case R.id.ibAddIncome:
-                startActivity(new Intent(Category.this, Income.class));
+                startActivity(new Intent(CategoryActivity.this, IncomeActivity.class));
                 break;
             case R.id.btnApply:
                 mCvCategory.setVisibility(View.GONE);
@@ -99,18 +99,23 @@ public class Category extends AppCompatActivity implements View.OnClickListener,
                 }
                 break;
             case R.id.tvProfile:
-                startActivity(new Intent(Category.this, Profile.class));
+                startActivity(new Intent(CategoryActivity.this, ProfileActivity.class));
                 break;
             case R.id.tvHome:
-                startActivity(new Intent(Category.this, Home.class));
+                startActivity(new Intent(CategoryActivity.this, HomeActivity.class));
                 break;
             case R.id.tvCustom:
-                startActivity(new Intent(Category.this, Custom.class));
+                startActivity(new Intent(CategoryActivity.this, CustomActivity.class));
                 break;
             case R.id.tvCategory:
-                startActivity(new Intent(Category.this, Category.class));
+                startActivity(new Intent(CategoryActivity.this, CategoryActivity.class));
         }
     }
+
+    /* Creating new list of items according to the income and expense category entered by the user
+       and then giving the new list to recycler view. And also setting total income, expense and
+       balance according to the new list items.
+    */
 
     public void setRecyclerView() {
         float totalIncome = 0, totalBalance = 0, totalExpense = 0;
@@ -147,9 +152,11 @@ public class Category extends AppCompatActivity implements View.OnClickListener,
 
     }
 
+    // On clicking of any item in the list moving user to Item Details to show extra details of item.
+
     @Override
     public void onClick(int position) {
         ListPassingHelper.clickPosition = originalPosition.get(position);
-        startActivity(new Intent(Category.this, ItemDetails.class));
+        startActivity(new Intent(CategoryActivity.this, ItemDetailsActivity.class));
     }
 }

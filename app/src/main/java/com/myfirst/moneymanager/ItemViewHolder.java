@@ -2,13 +2,11 @@ package com.myfirst.moneymanager;
 
 import android.graphics.Color;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -35,6 +33,9 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
 
     public void setData(ItemList itemList){
         mTvItemCategory.setText(itemList.getCategory());
+
+        // Making comment of particular item short while showing in recycler view list.
+
         String comment = itemList.getCategoryComment();
         String shortComment = "";
         int i=0;
@@ -43,6 +44,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder {
             i++;
         }
         mTvItemComment.setText(shortComment);
+
         mTvItemAmount.setText(itemList.getCategoryAmount()+"");
         if(itemList.getCategoryType().equals("Income"))
             mTvItemAmount.setTextColor(Color.parseColor("#3BA72D"));

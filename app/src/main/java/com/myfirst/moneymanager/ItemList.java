@@ -1,7 +1,5 @@
 package com.myfirst.moneymanager;
 
-import java.util.Date;
-
 public class ItemList {
 
     private String category,categoryType,categoryComment;

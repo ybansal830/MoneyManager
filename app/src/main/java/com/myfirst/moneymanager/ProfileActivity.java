@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Profile extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     private TextView mTvUserName,mTvName,mTvEmailId;
     private Button mBtnSignOut;
@@ -24,7 +24,7 @@ public class Profile extends AppCompatActivity {
         mBtnSignOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Profile.this,Login.class);
+                Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

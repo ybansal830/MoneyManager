@@ -23,7 +23,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class Custom extends AppCompatActivity implements View.OnClickListener,OnItemClickListener {
+public class CustomActivity extends AppCompatActivity implements View.OnClickListener,OnItemClickListener {
 
     private CardView mLMenu, mCvDate;
     private ImageButton mIbMenu, mIbDateInput, mIbBack, mIbAddExpense, mIbAddIncome;
@@ -93,10 +93,10 @@ public class Custom extends AppCompatActivity implements View.OnClickListener,On
                 mLMenu.setVisibility(View.GONE);
                 break;
             case R.id.ibAddExpense:
-                startActivity(new Intent(Custom.this, Expenses.class));
+                startActivity(new Intent(CustomActivity.this, ExpensesActivity.class));
                 break;
             case R.id.ibAddIncome:
-                startActivity(new Intent(Custom.this, Income.class));
+                startActivity(new Intent(CustomActivity.this, IncomeActivity.class));
                 break;
             case R.id.btnApply:
                 mCvDate.setVisibility(View.GONE);
@@ -114,28 +114,32 @@ public class Custom extends AppCompatActivity implements View.OnClickListener,On
                 }
                 break;
             case R.id.tvProfile:
-                startActivity(new Intent(Custom.this, Profile.class));
+                startActivity(new Intent(CustomActivity.this, ProfileActivity.class));
                 break;
             case R.id.tvHome:
-                startActivity(new Intent(Custom.this, Home.class));
+                startActivity(new Intent(CustomActivity.this, HomeActivity.class));
                 break;
             case R.id.tvCustom:
-                startActivity(new Intent(Custom.this, Custom.class));
+                startActivity(new Intent(CustomActivity.this, CustomActivity.class));
                 break;
             case R.id.tvCategory:
-                startActivity(new Intent(Custom.this, Category.class));
+                startActivity(new Intent(CustomActivity.this, CategoryActivity.class));
                 break;
             case R.id.etInputDateStart:
-                new DatePickerDialog(Custom.this,R.style.DialogTheme, date, myCalendar
+                new DatePickerDialog(CustomActivity.this,R.style.DialogTheme, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
                 break;
             case R.id.etInputDateEnd:
-                new DatePickerDialog(Custom.this,R.style.DialogTheme, date2, myCalendar
+                new DatePickerDialog(CustomActivity.this,R.style.DialogTheme, date2, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
         }
     }
+
+    /* Setting start date for filtering by showing calendar to user
+       and then picking the date which is selected by user.
+    */
 
     public void datePickerDialogOne() {
         date = new DatePickerDialog.OnDateSetListener() {
@@ -153,6 +157,10 @@ public class Custom extends AppCompatActivity implements View.OnClickListener,On
         mEtInputDateStart.setText(sdf.format(myCalendar.getTime()));
     }
 
+    /* Setting end date for filtering by showing calendar to user
+       and then picking the date which is selected by user.
+    */
+
     public void datePickerDialogTwo() {
         date2 = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -168,6 +176,12 @@ public class Custom extends AppCompatActivity implements View.OnClickListener,On
     private void updateLabelTwo() {
         mEtInputDateEnd.setText(sdf.format(myCalendar.getTime()));
     }
+
+    /* After taking start and end date for filtration of items which is registered by user,
+       making a separate list which is matching according to filtration and then giving the new
+       list to recycler view and also setting total income, expense and balance according to
+       filtration.
+    */
 
     public void setRecyclerView() {
         if (ListPassingHelper.userData.getItemList() != null) {
@@ -209,9 +223,11 @@ public class Custom extends AppCompatActivity implements View.OnClickListener,On
         }
     }
 
+    // When any item is clicked moving user to Item Details to show extra details of the item.
+
     @Override
     public void onClick(int position) {
         ListPassingHelper.clickPosition = originalPosition.get(position);
-        startActivity(new Intent(Custom.this,ItemDetails.class));
+        startActivity(new Intent(CustomActivity.this, ItemDetailsActivity.class));
     }
 }

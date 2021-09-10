@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class Login extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mBtnLogin, mBtnCreateNow;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
@@ -38,26 +38,6 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        if(getSharedPreference(this).getString("username",null) != null){
-            Intent intent = new Intent(Login.this,Home.class);
-            Query user = reference.orderByChild("userName").equalTo(getSharedPreference
-                    (this).getString("username",null));
-            user.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    userData = snapshot.child(getSharedPreference
-                            (Login.this).getString("username",null)).
-                            getValue(UserData.class);
-                    ListPassingHelper.userData = userData;
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-            startActivity(intent);
-        }
         initViews();
         mBtnLogin.setOnClickListener(this);
         mBtnCreateNow.setOnClickListener(this);
@@ -83,9 +63,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 isCorrect();
                 break;
             case R.id.btnCreateNow:
-                startActivity(new Intent(Login.this, SignUp.class));
+                startActivity(new Intent(LoginActivity.this, SignUpActivity.class));
         }
     }
+
+    /* Checking data entered by the user at login are matching with the data present in
+       firebase realtime database or not. If present then directly moving to Home Activity
+       else showing error.
+    */
+
     private void isCorrect(){
         Query checkUserExist = reference.orderByChild("userName").equalTo(mEtUserName.
                 getText().toString());
@@ -96,23 +82,29 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     String passwordFromDb = snapshot.child(mEtUserName.getText().toString())
                             .child("password").getValue(String.class);
                     if(passwordFromDb.equals(mEtPassword.getText().toString())){
+
+                        /* After checking credentials checking remember me checkbox is checked
+                           or not if checked then saving credentials into shared preference file
+                           also.
+                        */
+
                         if(mCbRememberMe.isChecked()){
-                            SharedPreferences.Editor editor = getSharedPreference(Login.this).edit();
+                            SharedPreferences.Editor editor = getSharedPreference(LoginActivity.this).edit();
                             editor.putString("username",mEtUserName.getText().toString());
                             editor.apply();
                         }
-                        Intent intent = new Intent(Login.this,Home.class);
+                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                         userData = snapshot.child(mEtUserName.getText().toString()).
                                 getValue(UserData.class);
                         ListPassingHelper.userData = userData;
                         startActivity(intent);
                     }
                     else
-                        Toast.makeText(Login.this,"Incorrect Passowrd",
+                        Toast.makeText(LoginActivity.this,"Incorrect Passowrd",
                                 Toast.LENGTH_SHORT).show();
                 }
                 else
-                    Toast.makeText(Login.this,"Incorrect Username",
+                    Toast.makeText(LoginActivity.this,"Incorrect Username",
                             Toast.LENGTH_SHORT).show();
             }
 

@@ -1,27 +1,20 @@
 package com.myfirst.moneymanager;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-public class Home extends AppCompatActivity implements View.OnClickListener, OnItemClickListener {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener, OnItemClickListener {
 
     private CardView mLMenu;
     private ImageButton mIbMenu, mIbBack, mIbAddExpense, mIbAddIncome;
@@ -64,11 +57,15 @@ public class Home extends AppCompatActivity implements View.OnClickListener, OnI
         mTvTotalBalance = findViewById(R.id.tvTotalBalance);
     }
 
+    /* Setting recycler view with all the income and expenses registered by the user and also
+       calculating user total income, expenses and balance amount.
+    */
+
     public void setRecyclerView() {
         if (ListPassingHelper.userData.getItemList() != null) {
             float totalIncome = 0,totalBalance = 0,totalExpense = 0;
             setAdapter();
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Home.this,
+            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(HomeActivity.this,
                     RecyclerView.VERTICAL,false);
             mRecyclerView.setAdapter(itemAdapter);
             mRecyclerView.setLayoutManager(linearLayoutManager);
@@ -95,22 +92,22 @@ public class Home extends AppCompatActivity implements View.OnClickListener, OnI
                 mLMenu.setVisibility(View.GONE);
                 break;
             case R.id.ibAddExpense:
-                startActivity(new Intent(Home.this, Expenses.class));
+                startActivity(new Intent(HomeActivity.this, ExpensesActivity.class));
                 break;
             case R.id.ibAddIncome:
-                startActivity(new Intent(Home.this, Income.class));
+                startActivity(new Intent(HomeActivity.this, IncomeActivity.class));
                 break;
             case R.id.tvProfile:
-                startActivity(new Intent(Home.this, Profile.class));
+                startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
                 break;
             case R.id.tvHome:
-                startActivity(new Intent(Home.this, Home.class));
+                startActivity(new Intent(HomeActivity.this, HomeActivity.class));
                 break;
             case R.id.tvCustom:
-                startActivity(new Intent(Home.this, Custom.class));
+                startActivity(new Intent(HomeActivity.this, CustomActivity.class));
                 break;
             case R.id.tvCategory:
-                startActivity(new Intent(Home.this, Category.class));
+                startActivity(new Intent(HomeActivity.this, CategoryActivity.class));
                 break;
         }
     }
@@ -119,9 +116,13 @@ public class Home extends AppCompatActivity implements View.OnClickListener, OnI
         itemAdapter = new ItemAdapter(ListPassingHelper.userData.getItemList(), this);
     }
 
+    /* When user click any of the item showing in the recycler view then moving to the item details
+       activity for showing more details of the particular item.
+    */
+
     @Override
     public void onClick(int position) {
         ListPassingHelper.clickPosition = position;
-        startActivity(new Intent(Home.this, ItemDetails.class));
+        startActivity(new Intent(HomeActivity.this, ItemDetailsActivity.class));
     }
 }

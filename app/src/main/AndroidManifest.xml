@@ -9,15 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MoneyManager">
-        <activity android:name=".Profile"></activity>
-        <activity android:name=".SignUp" />
-        <activity android:name=".Login" />
-        <activity android:name=".ItemDetails" />
-        <activity android:name=".Income" />
-        <activity android:name=".Expenses" />
-        <activity android:name=".Home" />
-        <activity android:name=".Category" />
-        <activity android:name=".Custom" />
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ItemDetailsActivity" />
+        <activity android:name=".IncomeActivity" />
+        <activity android:name=".ExpensesActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".CategoryActivity" />
+        <activity android:name=".CustomActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

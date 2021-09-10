@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class ItemDetails extends AppCompatActivity {
+public class ItemDetailsActivity extends AppCompatActivity {
 
     private TextView mTvAmount,mTvCategory,mTvType,mTvDate,mTvComment;
     private ImageButton mIbEdit,mIbDelete;
@@ -29,10 +29,17 @@ public class ItemDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
         initViews();
+
+        /* When user clicks on delete item button then showing alert box to the user with options
+           confirm delete or cancel when user clicks on cancel then simply drop the alert box else
+           removing the particular item from the list as well as from the firebase realtime database
+           and then moving user to Home Activity.
+        */
+
         mIbDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(ItemDetails.this)
+                new AlertDialog.Builder(ItemDetailsActivity.this)
                         .setTitle("Confirm Delete")
                         .setMessage("Are you sure you want to delete this?")
                         .setPositiveButton("DELETE", new DialogInterface.OnClickListener() {
@@ -42,7 +49,7 @@ public class ItemDetails extends AppCompatActivity {
                                         (ListPassingHelper.clickPosition);
                                 reference.child(ListPassingHelper.userData.getUserName()).
                                         setValue(ListPassingHelper.userData);
-                                startActivity(new Intent(ItemDetails.this,Home.class));
+                                startActivity(new Intent(ItemDetailsActivity.this, HomeActivity.class));
                             }
                         })
                         .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -54,14 +61,19 @@ public class ItemDetails extends AppCompatActivity {
                         .show();
             }
         });
+
+        /* When user clicks on edit item button then moving user to Expenses/Income Activity
+           according to the item.
+        */
+
         mIbEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ListPassingHelper.edit = true;
                 if(itemList.getCategoryType().equals("Expenses"))
-                    startActivity(new Intent(ItemDetails.this,Expenses.class));
+                    startActivity(new Intent(ItemDetailsActivity.this, ExpensesActivity.class));
                 else
-                    startActivity(new Intent(ItemDetails.this,Income.class));
+                    startActivity(new Intent(ItemDetailsActivity.this, IncomeActivity.class));
             }
         });
     }
@@ -77,6 +89,8 @@ public class ItemDetails extends AppCompatActivity {
         mIbDelete = findViewById(R.id.ibDelete);
         setData();
     }
+
+    // Showing and setting all data of particular clicked item.
 
     private void setData() {
         mTvAmount.setText(itemList.getCategoryAmount()+"");

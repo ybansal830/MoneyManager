@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class Expenses extends AppCompatActivity implements View.OnClickListener {
+public class ExpensesActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageButton mFood, mBills, mHouse, mEntertainment, mShopping, mClothing, mTravel;
     private ImageButton mEducation, mOthers, mIbShowSelect;
@@ -50,6 +50,10 @@ public class Expenses extends AppCompatActivity implements View.OnClickListener 
         mEtInputDate.setOnClickListener(this);
         mBtnAdd.setOnClickListener(this);
     }
+
+    /* If user clicked on edit item inside Item Details Activity then showing all the previous
+       details of item to the user by setting all the data.
+    */
 
     private void alreadySetData() {
         ItemList itemList = ListPassingHelper.userData.getItemList().get
@@ -127,6 +131,9 @@ public class Expenses extends AppCompatActivity implements View.OnClickListener 
                 mTvShowSelect.setText("Others");
                 id = R.drawable.others;
                 break;
+
+                // When user clicks on enter date option then showing calendar for date picking.
+
             case R.id.etEnterDate:
                 Calendar myCalendar = Calendar.getInstance();
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.US);
@@ -139,14 +146,23 @@ public class Expenses extends AppCompatActivity implements View.OnClickListener 
                         mEtInputDate.setText(sdf.format(myCalendar.getTime()));
                     }
                 };
-                new DatePickerDialog(Expenses.this,R.style.DialogTheme, date, myCalendar
+                new DatePickerDialog(ExpensesActivity.this,R.style.DialogTheme, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
                 break;
+
+                /* When finally user clicks on add item button then firstly checking is user filled
+                   all the required details correctly or not. If no then showing message to fill
+                   up the details else checking is user edit the already created item then removing
+                   the previous item and adding new edited item in the list else making a separate
+                   new item and adding that item in the list and then also pushing the new item
+                   inside the firebase realtime database.
+                */
+
             case R.id.btnAdd:
                 if (mEtInputAmount.getText().toString().length() < 1 ||
                         mEtInputDate.getText().toString().length() < 1)
-                    Toast.makeText(Expenses.this, "Please fill up the details",
+                    Toast.makeText(ExpensesActivity.this, "Please fill up the details",
                             Toast.LENGTH_SHORT).show();
                 else {
                     if(ListPassingHelper.edit){
@@ -161,7 +177,7 @@ public class Expenses extends AppCompatActivity implements View.OnClickListener 
                     ListPassingHelper.userData.getItemList().add(itemList);
                     reference.child(ListPassingHelper.userData.getUserName()).
                             setValue(ListPassingHelper.userData);
-                    Intent intent = new Intent(Expenses.this,Home.class);
+                    Intent intent = new Intent(ExpensesActivity.this, HomeActivity.class);
                     startActivity(intent);
                 }
         }

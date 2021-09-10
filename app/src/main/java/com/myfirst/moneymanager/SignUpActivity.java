@@ -17,14 +17,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Queue;
 
-public class SignUp extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
 
     private Button mBtnRegister;
     private EditText mEtName, mEtEmail, mEtUserName, mEtPassword, mEtRePassword;
@@ -39,6 +35,10 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         initViews();
+
+        /* After clicking on register button checking all the credentials entered by the user
+           are valid or not. If not then showing error for particular field. */
+
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,20 +53,26 @@ public class SignUp extends AppCompatActivity {
                     mEtPassword.setError("Weak Password");
                 else if (!mEtRePassword.getText().toString().equals(mEtPassword.getText().toString()))
                     mEtRePassword.setError("Password must be same");
+
+        /* After checking credentials checking is username entered by the user is already exist or
+           not. If exist then showing message user already exist else saving all the credentials
+           entered by the user into firebase realtime database and moving user to login activity.
+        */
+
                 else {
                     Query checkUserAlreadyExist = reference.orderByChild("userName").
                             equalTo(mEtUserName.getText().toString());
                     checkUserAlreadyExist.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if (snapshot.exists()) Toast.makeText(SignUp.this,
+                            if (snapshot.exists()) Toast.makeText(SignUpActivity.this,
                                     "User already exist", Toast.LENGTH_LONG).show();
                             else {
                                 userData = new UserData(mEtName.getText().toString(),
                                         mEtUserName.getText().toString(), mEtEmail.getText().toString(),
                                         mEtPassword.getText().toString(), itemList);
                                 reference.child(mEtUserName.getText().toString()).setValue(userData);
-                                Intent intent = new Intent(SignUp.this, Login.class);
+                                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                                 startActivity(intent);
                             }
                         }
@@ -77,8 +83,10 @@ public class SignUp extends AppCompatActivity {
                         }
                     });
                 }
+
             }
         });
+
     }
 
     private void initViews() {
