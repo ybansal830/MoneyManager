@@ -1,8 +1,11 @@
 
+
 # Money Manager
 #### This app manage your financial account . You can add your particular incomes and expenses and you can see your saving account on the daily basis. You can easily track your money with the help of this app.
 
 <img src=https://raw.githubusercontent.com/ybansal830/MoneyManager/master/MoneyManager/log%20in%20image.jpg height="55px" />
+
+<a href='https://play.google.com/store/apps/details?id=com.myfirst.moneymanager'><img src='https://firebasestorage.googleapis.com/v0/b/money-manager-2215d.appspot.com/o/google_play.png?alt=media&token=247a837c-5204-4db9-a999-6c1fc317fae0' width="300px"/></a>
 
 
 ## Screenshots
